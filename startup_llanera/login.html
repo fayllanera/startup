@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DINER'S RESERVATION</title>
+		<link rel="stylesheet" type="text/css" href="login.css">
+		<script type="text/javascript" src="jQuery-2.1.4.min.js"></script>
+	</head>
+<body>
+
+	<h1></h1>
+	<section id="form_before_lounch">
+
+		<p>Log In</p>
+
+			<form id="form" method="post" onsubmit="return false">
+
+				<div>
+					<div>
+						<input type="text" id="username" placeholder="Username"/>
+					</div>
+					<div>
+						<input type="password" id="password" placeholder="Password"/>
+					</div>
+					<div id="btn">
+						<input type="submit" id="submit" value="Log In"/>
+					</div>
+
+				</div>
+
+			</form>
+
+	</section>
+
+</body>
+</html>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$("#form_before_lounch").click(function(){
+
+		$(this).animate({height:"250px", width:"400px"});
+		$(this).children("p").animate({fontSize:"25px"});
+
+		$("#form").delay(500).fadeIn();
+	})
+	$("#submit").click(function(){
+
+		var email = $("#email").val();
+		var pass = $("#password").val();
+
+		if (email != "" && pass != ""){
+
+			$("#form_before_lounch").fadeOut();
+			$("h1").fadeIn();
+			$("h1").html("Welcome "+email);
+			$("h1").animate({marginTop:"200px"});
+
+			
+		}
+	})
+})
+
+</script>
